@@ -1,27 +1,33 @@
 body {
+    display: flex;
     height: 100vh;
     width: 100vw;
-    text-align: center;
+    background-color: lightseagreen;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .calculator {
     height: 900px;
     width: 600px;
-    border: black solid 5px;
     display: flex;
     flex-direction: column;
-    margin: auto;
-    background-color: gray;
 }
 #outputDisplay {
-    background-color: gray;
-    height: 20%;
+    display: flex;
+    background-color: grey;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
 }
 
 #screen {
-    height: 100%;
-    background-color: black;
-    color: white;
+    display: block;
+    height: 95%;
+    width: 98%;
+    background-color: #222222;
+    color: lightgreen;
     text-align: right;
     font-size: 30px;
     border: black solid 5px;
@@ -29,30 +35,43 @@ body {
 
 #inputButtons {
     background-color: grey;
-    height: 80%;
+    height: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .regButton {
-    display: inline-block;
-    background-color: #444444;
-    color: white;
+    display: flex;
+    background-color: #333333;
+    color: #cccccc;
     border: black solid 3px;
+    justify-content: center;
+    align-items: center;
     margin: 5%;
 }
 
 .operator {
-    background-color: grey;
-    font-size: 4em;
+    background-color: darkslategray;
+    font-size: 2em;
 }
 
 #equals {
     background-color: darkred;
 }
 h1 {
-    font-size: 4em;
-    font-weight: bold;
-    margin: auto;
+    font-size: 3em;
+}
+#screenBottom {
+    height: 30%;
+}
+h2 {
+    font-size: 2.5em;
+}
+#screenTop {
+    height: 70%;
+}
+h3 {
+    font-size: 1em;
+    text-align: left;
 }
