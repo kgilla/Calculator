@@ -1,0 +1,58 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.calculator {
+    height: 900px;
+    width: 600px;
+    border: black solid 5px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: gray;
+}
+#outputDisplay {
+    background-color: gray;
+    height: 20%;
+}
+
+#screen {
+    height: 100%;
+    background-color: black;
+    color: white;
+    text-align: right;
+    font-size: 30px;
+    border: black solid 5px;
+}
+
+#inputButtons {
+    background-color: grey;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.regButton {
+    display: inline-block;
+    background-color: #444444;
+    color: white;
+    border: black solid 3px;
+    margin: 5%;
+}
+
+.operator {
+    background-color: grey;
+    font-size: 4em;
+}
+
+#equals {
+    background-color: darkred;
+}
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+    margin: auto;
+}
