@@ -2,29 +2,33 @@ body {
     display: flex;
     height: 100vh;
     width: 100vw;
-    background-image: url('background.jpg');
+    background-color:  #2980b9 ;
     justify-content: center;
     align-items: center;
-    opacity: 70%;
+    opacity: 90%;
 }
 
 .calculator {
-    height: 700px;
-    width: 400px;
+    height: 1000px;
+    width: 600px;
     display: flex;
     flex-direction: column;
     box-shadow: 3px 3px 5px 6px #222;
+    border: 1px solid black;
+    padding: 1%;
+    background-color: black;
 }
 #outputDisplay {
-    height: 30%;
+    height: 25%;
     display: block;
     background-color: white;
     text-align: right;
     font-size: 30px;
+    padding: 1%;
 }
 
 #inputButtons {
-    height: 70%;
+    height: 75%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -36,29 +40,50 @@ body {
     color: #dddddd;
     justify-content: center;
     align-items: center;
+    border: black 1px solid;
+    -moz-user-select: none;
+    font-size: 2em;
+}
+
+.regButton:hover {
+    border: white solid 1px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 2.1em;
 }
 
 .operator {
-    background-color: #666666;
-    font-size: 2em;
+    background-color: #333333;
+    font-size: 1.8em;
 }
 
-#equals {
-    background-color: darkred;
+.equality {
+    background-color:  #0e6251 ;
 }
+
 h1 {
-    font-size: 2.5em;
+    font-size: 1.5em;
+    overflow: hidden;
 }
+ h3 {
+     float: left;
+     font-size: 1.2em;
+ }
+
 #screenBottom {
-    height: 30%;
+    height: 20%;
 }
-h2 {
-    font-size: 2em;
-}
+
 #screenTop {
-    height: 70%;
+    height: 80%;
 }
-h3 {
-    font-size: 1em;
-    text-align: left;
+
+#clear{
+    font-size: 1.8em;
+    background-color: #620e49;
+}
+
+#delete {
+    font-size: 1.5em;
+    background-color: #333333;
 }
