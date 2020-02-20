@@ -19,14 +19,19 @@ operator.forEach((operator) => {
 
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', clearDisplay, event);
+
 const remove = document.querySelector('#delete');
 remove.addEventListener('click', deleteDisplay, event);
+
 const equality = document.querySelector('#equals');
 equality.addEventListener('click', equals, event);
+
 const dot = document.querySelector('#dot');
 dot.addEventListener('click', addDot, event);
+
 const changer = document.querySelector('#changer');
 changer.addEventListener('click', change, event);
+
 const display = document.querySelector('h1');
 const totalDisplay = document.querySelector('h3');
 
@@ -115,8 +120,17 @@ function multiplication (a, b) {
 function division (a, b) {
 	return a / b;
 }
+function toPercent (a) {
+	return a * 0.01;
+}
+function toNegative (a) {
+	return a * -1;
+}
 
-// formatting functions
+//----------------------------------------------------------------------------------------------------//
+// formatting functions																				  //	
+//----------------------------------------------------------------------------------------------------//
+
 function addDot () {
 	if (dotAdded === false) {
 		display.textContent += event.target.textContent;
@@ -137,11 +151,17 @@ function clearDisplay () {
 
 function deleteDisplay () {
 	let temp = display.textContent;
-	
-	temp.pop().join();
+	let temp2 = totalDisplay.textContent;
+	temp = temp.slice(0, temp.length - 1);
+	temp2 = temp2.slice(0, temp2.length - 1);
 	display.textContent = temp;
+	totalDisplay.textContent = temp2;
 }
 
 function change () {
-
+	let temp = display.textContent;
+	temp = toNegative(temp);
+	display.textContent = temp;
 }
+
+

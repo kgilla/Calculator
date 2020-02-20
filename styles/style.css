@@ -34,6 +34,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3%;
+    padding: 2%;
 }
 
 .regButton {
@@ -44,13 +46,12 @@ body {
     align-items: center;
     -moz-user-select: none;
     font-size: 2vw;
-    margin: 7%;
     box-shadow: -3px 3px black, -2px 2px black, -1px 1px black;
     border: 1px solid black;
 }
 
 .regButton:hover {
-    border: white solid 1px;
+    border: grey solid 3px;
     cursor: pointer;
     font-weight: bold;
     font-size: 2.1vw;
@@ -68,6 +69,7 @@ body {
 .equality {
     background-color:  #0e6251 ;
     font-size: 2vw;
+    grid-area: 5/3/6/5;
 }
 
 h1 {
