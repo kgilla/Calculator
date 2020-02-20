@@ -25,10 +25,13 @@ dot.addEventListener('click', addDot, event);
 const changer = document.querySelector('#changer');
 changer.addEventListener('click', change, event);
 
-//--------------------------------------------------------
+//----------------------------------------------------------------------
 // main functions
 
 function number () {
+	if (display.textContent[0] === '=') {
+		clearDisplay();
+	}
 	let number = event.target.textContent;
 	number *= 1;
 	display.textContent += number;
@@ -46,12 +49,12 @@ function operation () {
 		operate();
 		operatorValue = event.target.id;
 		display.textContent = "";
-		totalDisplay.textContent += operatorValue;
+		totalDisplay.textContent += " " + operatorValue + " ";
 		dotAdded = false;
 	} else {
 		operatorValue = event.target.id;
 		display.textContent = "";
-		totalDisplay.textContent += operatorValue;
+		totalDisplay.textContent += " " + operatorValue + " ";
 		operationCount++;
 		dotAdded = false;
 	}
@@ -61,24 +64,26 @@ function operate () {
 	numeroUno *= 1;
 	numeroDe *= 1;
 	let answer = resolver(operatorValue, numeroUno, numeroDe);
+	answer = answer.toFixed(6);
+	answer *= 1;
 	numeroUno = answer;
 	return answer;
 }
 
 function equals () {
-	if (numeroDe === undefined) {
-		return 0;
+	if (numeroDe === 0) {
+		return;
 	} else {
 		let answer = operate();
 		numeroUno = answer;
-		console.log(numeroUno, numeroDe);
-		display.textContent = answer;
-		numeroDe = 0;
+		display.textContent = "= " + answer;
+		operationCount = 0;
+		dotAdded = true;
 	}
 }
 
+// math functions ------------------------------------------------------------
 
-// math functions
 function resolver (operation, num1, num2) {
 	if (operation === '+') {
 		 return addition(num1, num2);

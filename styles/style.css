@@ -62,7 +62,7 @@ body {
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 2.5em;
     overflow: hidden;
 }
  h3 {
@@ -71,11 +71,11 @@ h1 {
  }
 
 #screenBottom {
-    height: 20%;
+    height: 30%;
 }
 
 #screenTop {
-    height: 80%;
+    height: 70%;
 }
 
 #clear{
