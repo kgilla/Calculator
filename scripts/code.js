@@ -1,7 +1,4 @@
-//----------------------------------------------------------------------------------------------------//
-// querySelectors // eventListeners	// global variables												  //	
-//----------------------------------------------------------------------------------------------------//
-
+// querySelectors / eventListeners	/ global variables												  
 let numeroUno = 0;
 let numeroDe = 0;
 let dotAdded = false;
@@ -9,11 +6,11 @@ let operationCount = 0;
 
 const numeric = document.querySelectorAll('.numeric');
 numeric.forEach((numeric) => {
-    numeric.addEventListener('click', number, event);
+	numeric.addEventListener('click', number, event);
 });
 const operator = document.querySelectorAll('.operator');
 operator.forEach((operator) => {
-    operator.addEventListener('click', operation, event);
+	operator.addEventListener('click', operation, event);
 });
 
 const clear = document.querySelector('#clear');
@@ -34,11 +31,8 @@ changer.addEventListener('click', change, event);
 const display = document.querySelector('h1');
 const totalDisplay = document.querySelector('h3');
 
-//----------------------------------------------------------------------------------------------------//
-// main functions																					  //	
-//----------------------------------------------------------------------------------------------------//
-
-function number () {
+// main functions																					 
+function number() {
 	if (display.textContent[0] === '=') {
 		clearDisplay();
 	}
@@ -54,7 +48,7 @@ function number () {
 	}
 }
 
-function operation () {
+function operation() {
 	if (operationCount > 0) {
 		operate();
 		operatorValue = event.target.id;
@@ -70,7 +64,7 @@ function operation () {
 	}
 }
 
-function operate () {
+function operate() {
 	numeroUno *= 1;
 	numeroDe *= 1;
 	let answer = resolver(operatorValue, numeroUno, numeroDe);
@@ -80,7 +74,7 @@ function operate () {
 	return answer;
 }
 
-function equals () {
+function equals() {
 	if (numeroDe === 0) {
 		return;
 	} else {
@@ -92,13 +86,10 @@ function equals () {
 	}
 }
 
-//----------------------------------------------------------------------------------------------------//
-// math functions																					  //	
-//----------------------------------------------------------------------------------------------------//
-
-function resolver (operation, num1, num2) {
+// math functions																				
+function resolver(operation, num1, num2) {
 	if (operation === '+') {
-		 return addition(num1, num2);
+		return addition(num1, num2);
 	} else if (operation === "-") {
 		return subtraction(num1, num2);
 	} else if (operation === "x") {
@@ -107,32 +98,38 @@ function resolver (operation, num1, num2) {
 		return division(num1, num2);
 	}
 }
-function addition (a, b) {
+
+function addition(a, b) {
 	return a + b;
 }
-function subtraction (a, b) {
+
+function subtraction(a, b) {
 	return a - b;
 }
-function multiplication (a, b) {
+
+function multiplication(a, b) {
 	return a * b;
 }
-function division (a, b) {
+
+function division(a, b) {
 	return a / b;
 }
-function toPercent (a) {
+
+function toPercent(a) {
 	return a * 0.01;
 }
-function toNegative (a) {
+
+function toNegative(a) {
 	return a * -1;
 }
 
-function change () {
+function change() {
 	let temp = display.textContent;
 	temp = toNegative(temp);
 	display.textContent = temp;
 }
 
-function addDot () {
+function addDot() {
 	if (dotAdded === false) {
 		display.textContent += event.target.textContent;
 		totalDisplay.textContent += event.target.textContent;
@@ -140,21 +137,18 @@ function addDot () {
 	}
 }
 
-//----------------------------------------------------------------------------------------------------//
-// formatting functions																				  //	
-//----------------------------------------------------------------------------------------------------//
-
-function clearDisplay () {
+// formatting functions										
+function clearDisplay() {
 	display.textContent = "";
 	totalDisplay.textContent = "";
-	numeroUno = 0;	
+	numeroUno = 0;
 	numeroDe = 0;
 	operatorValue = "";
 	operationCount = 0;
 	dotAdded = false;
 }
 
-function deleteDisplay () {
+function deleteDisplay() {
 	let temp = display.textContent;
 	let temp2 = totalDisplay.textContent;
 	temp = temp.slice(0, temp.length - 1);
@@ -167,6 +161,3 @@ function deleteDisplay () {
 		numeroUno = temp;
 	}
 }
-
-
-
